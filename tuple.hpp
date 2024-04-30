@@ -11,7 +11,7 @@
 i hate fucking templates, just give me the runtime forloop please
 */
 template<class ...Va>
-std::ostream& operator<<(std::ostream& os, const std::tuple<Va...>& v){
+inline static std::ostream& operator<<(std::ostream& os, const std::tuple<Va...>& v){
     os << "( ";
 
     std::apply
@@ -27,16 +27,16 @@ std::ostream& operator<<(std::ostream& os, const std::tuple<Va...>& v){
 
 
 template<class ...Va>
-std::wostream& operator<<(std::wostream& os, const std::tuple<Va...>& v){
-    os << "( ";
+inline static std::wostream& operator<<(std::wostream& os, const std::tuple<Va...>& v){
+    os << L"( ";
 
     std::apply
     ([&os](Va const&... tupleArgs)
         {
             std::size_t n{0};
-            ((os << tupleArgs << (++n != sizeof...(Va) ? ", " : "")), ...);
+            ((os << tupleArgs << (++n != sizeof...(Va) ? L", " : L"")), ...);
         }, v
     );
 
-    return os << " )";
+    return os << L" )";
 }

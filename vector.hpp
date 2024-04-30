@@ -5,7 +5,7 @@
 #include <vector>
 
 template<class T>
-std::ostream& operator<<(std::ostream& os, const std::vector<T>& v){
+inline static std::ostream& operator<<(std::ostream& os, const std::vector<T>& v){
     os << "[ ";
     std::size_t i = 0;
     do{
@@ -19,14 +19,14 @@ std::ostream& operator<<(std::ostream& os, const std::vector<T>& v){
 
 
 template<class T>
-std::wostream& operator<<(std::wostream& os, const std::vector<T>& v){
-    os << "[ ";
+inline static std::wostream& operator<<(std::wostream& os, const std::vector<T>& v){
+    os << L"[ ";
     std::size_t i = 0;
     do{
         os << v[i];
         i++;
         if(i >= v.size())break;
-        os << ", ";
+        os << L", ";
     }while (true);
-    return os << "] ";
+    return os << L"] ";
 }

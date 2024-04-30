@@ -23,17 +23,17 @@ std::ostream& operator<<(std::ostream& os, const std::map<K,T>& v){
 
 template<class K, class T>
 std::wostream& operator<<(std::wostream& os, const std::map<K,T>& v){
-    os << "{ ";
+    os << L"{ ";
     auto it = v.begin();
     auto end = v.end();
     if(it != end)
         while (true) {
             const std::pair<K, T>& p = *it;
-            os << p.first << ": " << p.second;
+            os << p.first << L": " << p.second;
             it++;
             if(it == end)
                 break;
-            os << ", ";
+            os << L", ";
         }
-    return os << " }";
+    return os << L" }";
 }

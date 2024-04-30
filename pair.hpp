@@ -14,6 +14,6 @@ std::ostream& operator<<(std::ostream& os, const std::pair<K,T>& v){
 
 template<class K, class T>
 std::wostream& operator<<(std::wostream& os, const std::pair<K,T>& v){
-    os << v.first << ": " << v.second;
+    os << v.first << L": " << v.second;
     return  os;
 }

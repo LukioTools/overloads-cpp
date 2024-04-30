@@ -8,7 +8,7 @@
 
 
 template<class K, class T>
-std::ostream& operator<<(std::ostream& os, const std::unordered_map<K,T>& v){
+inline static std::ostream& operator<<(std::ostream& os, const std::unordered_map<K,T>& v){
     os << "{ ";
     auto it = v.begin();
     auto end = v.end();
@@ -24,8 +24,8 @@ std::ostream& operator<<(std::ostream& os, const std::unordered_map<K,T>& v){
 }
 
 template<class K, class T>
-std::wostream& operator<<(std::wostream& os, const std::unordered_map<K,T>& v){
-    os << "{ ";
+inline static std::wostream& operator<<(std::wostream& os, const std::unordered_map<K,T>& v){
+    os << L"{ ";
     auto it = v.begin();
     auto end = v.end();
     if(it != end)
@@ -34,7 +34,7 @@ std::wostream& operator<<(std::wostream& os, const std::unordered_map<K,T>& v){
             it++;
             if(it == end)
                 break;
-            os << ", ";
+            os << L", ";
         }
-    return os << " }";
+    return os << L" }";
 }
