@@ -1,0 +1,18 @@
+#pragma once
+
+#include <ostream>
+#include <functional>
+
+
+template<class ret, class ...args>
+std::ostream& operator<<(std::ostream& os, const std::function<ret(args...)>& fn){
+    if(!fn) return  os << "nullfunc";
+    os << typeid(ret).name() << "(";
+    std::size_t n{0};
+    ((os << typeid(args).name() << (++n != sizeof...(args) ? ", " : "")), ...);
+    os << ")";
+    return os;
+}
+
+
+
