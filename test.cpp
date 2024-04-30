@@ -1,6 +1,5 @@
 
 #include "span.hpp"
-#include <initializer_list>
 #include <iostream>
 #include <vector>
 

@@ -3,6 +3,7 @@
 
 #include <map>
 #include <ostream>
+#include "pair.hpp"
 
 template<class K, class T>
 std::ostream& operator<<(std::ostream& os, const std::map<K,T>& v){
@@ -11,8 +12,7 @@ std::ostream& operator<<(std::ostream& os, const std::map<K,T>& v){
     auto end = v.end();
     if(it != end)
         while (true) {
-            const std::pair<K, T>& p = *it;
-            os << p.first << ": " << p.second;
+            os *it;
             it++;
             if(it == end)
                 break;
@@ -28,8 +28,7 @@ std::wostream& operator<<(std::wostream& os, const std::map<K,T>& v){
     auto end = v.end();
     if(it != end)
         while (true) {
-            const std::pair<K, T>& p = *it;
-            os << p.first << L": " << p.second;
+            os << *it;
             it++;
             if(it == end)
                 break;
