@@ -6,3 +6,4 @@
 #include "tuple.hpp"
 #include "vector.hpp"
 #include "span.hpp"
+#include "bool.hpp"
