@@ -14,7 +14,7 @@ inline static std::ostream& operator<<(std::ostream& os, const std::vector<T>& v
         if(i >= v.size())break;
         os << ", ";
     }while (true);
-    return os << "] ";
+    return os << " ]";
 }
 
 
@@ -28,5 +28,5 @@ inline static std::wostream& operator<<(std::wostream& os, const std::vector<T>&
         if(i >= v.size())break;
         os << L", ";
     }while (true);
-    return os << L"] ";
+    return os << L" ]";
 }
